@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'passwords_screen.dart';
 import 'new_password_screen.dart';
 import 'settings_screen.dart';
+import 'password_generator_screen.dart';  // <- Add this import
 import '../utils/storage.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,13 +26,12 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  // Helper to navigate and refresh count after coming back
   Future<void> _navigateAndRefresh(Widget screen) async {
     await Navigator.push(
       context,
       MaterialPageRoute(builder: (_) => screen),
     );
-    _loadStats(); // Refresh count on return
+    _loadStats();
   }
 
   @override
@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Total Passwords: $totalPasswords', style: TextStyle(fontSize: 20)),
-            const SizedBox(height: 30), // More spacing here
+            const SizedBox(height: 30),
             ElevatedButton(
               child: Text('View Passwords'),
               onPressed: () => _navigateAndRefresh(PasswordsScreen()),
@@ -57,6 +57,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ElevatedButton(
               child: Text('Settings'),
               onPressed: () => _navigateAndRefresh(SettingsScreen()),
+            ),
+            const SizedBox(height: 15),
+            ElevatedButton(
+              child: Text('Password Generator'),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => PasswordGeneratorScreen()),
+              ),
             ),
           ],
         ),
