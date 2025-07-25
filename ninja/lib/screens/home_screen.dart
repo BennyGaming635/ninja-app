@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'passwords_screen.dart';
 import 'new_password_screen.dart';
 import 'settings_screen.dart';
-import 'password_generator_screen.dart';  // <- Add this import
+import 'password_generator_screen.dart';
 import '../utils/storage.dart';
+import '../models/password.dart';  // Don't forget this import
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -51,7 +52,20 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 15),
             ElevatedButton(
               child: Text('Add New Password'),
-              onPressed: () => _navigateAndRefresh(NewPasswordScreen()),
+              onPressed: () => _navigateAndRefresh(
+                NewPasswordScreen(
+                  onSave: (name, username, password, notes) async {
+                    final entry = PasswordEntry.create(
+                      name: name,
+                      username: username,
+                      password: password,
+                      notes: notes,
+                    );
+                    await Storage.savePassword(entry);
+                    _loadStats();
+                  },
+                ),
+              ),
             ),
             const SizedBox(height: 15),
             ElevatedButton(

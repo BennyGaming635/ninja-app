@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 
-void main() => runApp(NinjaApp());
+void main() {
+  runApp(NinjaApp());
+}
 
 class NinjaApp extends StatelessWidget {
   @override
