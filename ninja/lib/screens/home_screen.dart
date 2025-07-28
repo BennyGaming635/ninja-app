@@ -4,7 +4,7 @@ import 'new_password_screen.dart';
 import 'settings_screen.dart';
 import 'password_generator_screen.dart';
 import '../utils/storage.dart';
-import '../models/password.dart';  // Don't forget this import
+import '../models/password.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

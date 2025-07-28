@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class NewPasswordScreen extends StatefulWidget {
-  // Add username to onSave callback
+
   final Function(String name, String username, String password, String notes) onSave;
 
   NewPasswordScreen({required this.onSave});
@@ -49,7 +49,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
 
   String _estimateCrackTime(double entropy) {
     double guesses = pow(2, entropy).toDouble();
-    double guessesPerSecond = 1e9; // 1 billion guesses/sec
+    double guessesPerSecond = 1e9;
 
     double seconds = guesses / guessesPerSecond;
 
