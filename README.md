@@ -3,7 +3,7 @@ A lightweight password manager for Android. Coming soon to the Google Play Store
 
 Decided to start to make something for me and my friends as we don't really want to keep paying for 1Password or another password manager but want something half-decent so I decided to make Ninja. While it's somewhat lightweight it *just* works.
 
-I am a single-student developer so I'm still slowly adding more and more things into the app but so far Ninja has a password generator, password strength checker, developer mode (Learn more in DEVELOPER.md, search and a *good ol* **nuke** button!
+I am a single-student developer so I'm still slowly adding more and more things into the app but so far Ninja has a password generator, password strength checker, developer mode (Learn more in DEVELOPERS.md, search and a *good ol* **nuke** button!
 
 Thanks!
 
